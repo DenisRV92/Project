@@ -1,0 +1,43 @@
+.container {
+  margin: 0 auto;
+  width: 955px;
+  padding-top: 40px;
+
+  .nav {
+    display: flex;
+    //justify-content: space-between;
+    .left {
+      width: 525px;
+      //display: flex;
+
+      .left__contact {
+        //width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .contact__adress {
+          width: 130px;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+        .left__catalog {
+          width: 100%;
+          position: relative;
+          input {
+            width: 525px;
+            height: 40px;
+            border: #969da5 solid 1px;
+            padding: 25px;
+
+          }
+          img{
+            position: absolute;
+            top: 15px;
+            right: 20px;
+          }
+        }
+
+    }
+  }
+}
