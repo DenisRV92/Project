@@ -5,8 +5,6 @@ import car from '../../image/header/car.png'
 import arms from '../../image/header/arms.png'
 import style from './Header.module.scss'
 
-console.log(style)
-
 const Header = () => {
     return (
         <div className={style.header}>

@@ -1,0 +1,30 @@
+.menu {
+  width: 100%;
+  background-color: #565b61;
+  margin-top: 20px;
+
+  .container {
+    margin: 0 auto;
+    width: 955px;
+  }
+
+  .menu__list {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-family: "Roboto";
+    color: rgb(243, 243, 243);
+    //text-transform: uppercase;
+    align-items: center;
+    padding: 15px;
+    line-height: 1.2;
+
+    li {
+      width: min-content;
+      display: flex;
+      img{
+        padding-right: 5px;
+      }
+    }
+  }
+}
