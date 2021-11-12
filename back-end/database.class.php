@@ -12,7 +12,7 @@ class database
     {
         // global $newVar;
         $p = $_POST['input'];
-        $sql = "SELECT id,наименования,Цена FROM товары WHERE наименования LIKE '%$p%' AND `Доступное количество` > 0 ";
+        $sql = "SELECT id,Наименования,Цена,`Доступное количество`,Картинка FROM товары WHERE наименования LIKE '%$p%' AND `Доступное количество` > 0 ";
         $query = $this->pdo->prepare($sql);
         $query->execute();
         $result = $query->fetchAll();

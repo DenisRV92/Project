@@ -8,12 +8,15 @@ import icon1 from '../../image/nav/icon1.png'
 import icon2 from '../../image/nav/icon2.png'
 import user from '../../image/nav/user.png'
 import Menu from "../Menu/Menu";
+import CatalogList from "../CatalogList/CatalogList";
 
 export const Context = React.createContext();
 
 const Nav = () => {
     const [context, setContex] = useState('');
+    const [state, setState] = useState(false);
     const catalog = (e) => {
+        setState(false);
         let input = e.target.value
         if (input !== '') {
             var url = 'http://project/back-end/index.php';
@@ -31,7 +34,7 @@ const Nav = () => {
                 })
                 .then(function (body) {
                     setContex(body)
-                    console.log(body);
+                    // console.log(body);
                 });
         }
     }
@@ -49,7 +52,7 @@ const Nav = () => {
     }
     // console.log(context)
     return (
-        <Context.Provider value={[context]}>
+        <Context.Provider value={[context,state,setState]}>
             <>
                 <div className={style.container}>
                     <div className={style.nav}>
@@ -91,6 +94,7 @@ const Nav = () => {
                     </div>
                 </div>
                 <Menu/>
+
             </>
         </Context.Provider>
     );

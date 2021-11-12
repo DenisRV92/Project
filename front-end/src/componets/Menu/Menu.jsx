@@ -4,14 +4,15 @@ import call from '../../image/Menu/icon_расчёт.png'
 import stock from '../../image/Menu/icon_акции.png'
 import MenuItems from "./MenuItems/MenuItems";
 import {Context} from "../Nav/Nav";
+import CatalogList from "../CatalogList/CatalogList";
 
 const Menu = () => {
-    const [context] = useContext(Context);
-    console.log(context)
+    const [context,state,setState] = useContext(Context);
+    // console.log(context.length)
     const arrayList = [`РАСЧЕТ ОНЛАЙН`, 'КРОВЛЯ', 'ФАСАД', 'ЗАБОР',
         'ОКНА МАНСАРДНЫЕ', 'ЧЕРДАЧНЫЕ ЛЕСТНИЦЫ',
         'ВНУТРЕНЯЯ ОТДЕЛКА', 'ИНСТРУМЕНТ', 'АКЦИИ', 'МОНТАЖНЫЕ БРИГАДЫ']
-    const [state, setState] = useState(false);
+    // const [state, setState] = useState(false);
     const [text, setText] = useState('');
 
     function click(event) {
@@ -56,7 +57,7 @@ const Menu = () => {
             </div>
             {state ?
                 <MenuItems v={text} setState={setState}/>
-                :null
+                :<CatalogList />
             }
             {/*<MenuItems v={text}/>*/}
         </>
