@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import style from './Menu.module.scss'
 import call from '../../image/Menu/icon_расчёт.png'
 import stock from '../../image/Menu/icon_акции.png'
 import MenuItems from "./MenuItems/MenuItems";
+import {Context} from "../Nav/Nav";
 
 const Menu = () => {
+    const [context] = useContext(Context);
+    console.log(context)
     const arrayList = [`РАСЧЕТ ОНЛАЙН`, 'КРОВЛЯ', 'ФАСАД', 'ЗАБОР',
         'ОКНА МАНСАРДНЫЕ', 'ЧЕРДАЧНЫЕ ЛЕСТНИЦЫ',
         'ВНУТРЕНЯЯ ОТДЕЛКА', 'ИНСТРУМЕНТ', 'АКЦИИ', 'МОНТАЖНЫЕ БРИГАДЫ']
