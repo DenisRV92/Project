@@ -2,7 +2,7 @@ import React from 'react';
 import style from './MenuItems.module.scss'
 
 const MenuItems = (props) => {
-
+// console.log(props)
     if (props.v) {
         return (
 
@@ -12,6 +12,9 @@ const MenuItems = (props) => {
                 </div>
             </div>
         );
+    }
+    else {
+        return null
     }
 };
 

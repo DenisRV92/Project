@@ -7,8 +7,8 @@ import {Context} from "../Nav/Nav";
 import CatalogList from "../CatalogList/CatalogList";
 
 const Menu = () => {
-    const [context,state,setState] = useContext(Context);
-    // console.log(context.length)
+    const [state,setState,context,substr] = useContext(Context);
+// console.log(input);
     const arrayList = [`РАСЧЕТ ОНЛАЙН`, 'КРОВЛЯ', 'ФАСАД', 'ЗАБОР',
         'ОКНА МАНСАРДНЫЕ', 'ЧЕРДАЧНЫЕ ЛЕСТНИЦЫ',
         'ВНУТРЕНЯЯ ОТДЕЛКА', 'ИНСТРУМЕНТ', 'АКЦИИ', 'МОНТАЖНЫЕ БРИГАДЫ']
@@ -24,7 +24,7 @@ const Menu = () => {
         if (props.v === 'РАСЧЕТ ОНЛАЙН') {
             return (
                 <>
-                    <li><img src={call} alt=""/>{props.v}</li>
+                    <li style={{background:'#e18c44'}}><img src={call} alt=""/>{props.v}</li>
                 </>
             );
         } else if (props.v === 'АКЦИИ') {
@@ -57,7 +57,7 @@ const Menu = () => {
             </div>
             {state ?
                 <MenuItems v={text} setState={setState}/>
-                :<CatalogList />
+                :<CatalogList context={context} substr={substr}/>
             }
             {/*<MenuItems v={text}/>*/}
         </>

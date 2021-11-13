@@ -1,22 +1,22 @@
-import React, {useContext} from 'react';
-import {Context} from "../Nav/Nav";
+import React from 'react';
+import style from './CatalogList.module.scss'
 import CatalogItem from "./CatalogItems/CatalogItem";
 
-const CatalogList = () => {
-    const [context] = useContext(Context);
+const CatalogList = (props) => {
 
-    console.log(context)
-    // //
-    if (context.length !== 0) {
-        const Catalog = context.map(v =>
+    if (props.context.length !== 0) {
+        const Catalog = props.context.map(v =>
             <CatalogItem name={v['Наименования']}
-                                                      img={v['Картинка']}
-                                                      number={v['Доступное количество']}
-                                                      price={v['Цена']}
-        />)
+                         img={v['Картинка']}
+                         number={v['Доступное количество']}
+                         price={v['Цена']}
+                         substr={props.substr}
+            />)
         return (
-            <div>
-                {Catalog}
+            <div className={style.catalog}>
+                <div className={style.container}>
+                    {Catalog}
+                </div>
             </div>
         );
     } else {

@@ -7,18 +7,28 @@ import cart from '../../image/nav/cart.png'
 import icon1 from '../../image/nav/icon1.png'
 import icon2 from '../../image/nav/icon2.png'
 import user from '../../image/nav/user.png'
+import city from '../../image/mob_nav/city.png'
+import pin from '../../image/mob_nav/pin.png'
+import arrow from  '../../image/mob_nav/arrow.png'
 import Menu from "../Menu/Menu";
-import CatalogList from "../CatalogList/CatalogList";
+
 
 export const Context = React.createContext();
+
 
 const Nav = () => {
     const [context, setContex] = useState('');
     const [state, setState] = useState(false);
+    const [substr, setSubstr] = useState('');
+
     const catalog = (e) => {
+
         setState(false);
         let input = e.target.value
+        setSubstr(input)
+
         if (input !== '') {
+            // debugger
             var url = 'http://project/back-end/index.php';
             var formData = new FormData();
             formData.append('input', input);
@@ -28,17 +38,11 @@ const Nav = () => {
 
                 body: formData
             })
-                .then(function (response) {
-                    return response.json();
-
-                })
-                .then(function (body) {
-                    setContex(body)
-                    // console.log(body);
-                });
+                .then(response => response.json())
+                .then(body => setContex(body));
         }
     }
-    const logi=()=>{
+    const logi = () => {
         var url = 'http://project/back-end/index.php';
         var formData = new FormData();
         formData.append('logi', 'logi');
@@ -50,9 +54,9 @@ const Nav = () => {
         })
 
     }
-    // console.log(context)
+
     return (
-        <Context.Provider value={[context,state,setState]}>
+        <Context.Provider value={[state, setState, context, substr]}>
             <>
                 <div className={style.container}>
                     <div className={style.nav}>
@@ -69,11 +73,10 @@ const Nav = () => {
                                 </div>
                             </div>
                             <div className={style.left__catalog} id='form'>
-                                <input onChange={catalog} id='submit' type="text" name='title'
+                                <input onChange={catalog} type="text" value={substr}
                                        placeholder='Поиск по каталогу'/>
                                 <img src={search} alt=""/>
                                 <button onClick={logi}>Записать логи в базу</button>
-                                {/*<input type="submit"/>*/}
                             </div>
                         </div>
                         <div className={style.right}>
@@ -91,6 +94,19 @@ const Nav = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className={style.mob__container}>
+                    <div className={style.block__one}>
+                        <img src={city} alt=""/>
+                        <span>Город: </span><select>
+                            <option>Брянск и область</option>
+                        </select>
+                        <img className={style.arrow} src={arrow} alt=""/>
+                    </div>
+                    <div className={style.block__two}>
+                        <img src={pin} alt=""/>
+                        <span>Адреса и режим работы</span>
                     </div>
                 </div>
                 <Menu/>
