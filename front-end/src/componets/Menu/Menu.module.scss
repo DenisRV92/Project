@@ -30,4 +30,61 @@
       }
     }
   }
+
+  @media (max-width: 700px) {
+    .container {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .menu {
+    margin-top: 0;
+  }
+}
+
+//mobile
+.mob__container {
+  display: none;
+  background-color: white;
+}
+
+@media (max-width: 700px) {
+  .mob__container {
+    display: block;
+    .hidden {
+      display: none;
+    }
+    .mob__menu {
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      border-bottom: #dfdfdf solid 1px;
+      position: relative;
+
+      img {
+        padding: 2px 18px 0 8px;
+      }
+
+      span {
+        display: inline-block;
+        padding-top: 5px;
+        font-size: 14px;
+        font-family: "Roboto";
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        line-height: 1.2;
+      }
+      .arrow{
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .mob__list {
+      display: none;
+    }
+
+  }
 }
