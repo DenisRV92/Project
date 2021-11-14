@@ -29,8 +29,8 @@ const Nav = () => {
 
         if (input !== '') {
             // debugger
-            var url = 'http://project/back-end/index.php';
-            var formData = new FormData();
+            let url = 'http://project/back-end/index.php';
+            let formData = new FormData();
             formData.append('input', input);
 
             fetch(url, {
@@ -43,8 +43,8 @@ const Nav = () => {
         }
     }
     const logi = () => {
-        var url = 'http://project/back-end/index.php';
-        var formData = new FormData();
+        let url = 'http://project/back-end/index.php';
+        let formData = new FormData();
         formData.append('logi', 'logi');
 
         fetch(url, {

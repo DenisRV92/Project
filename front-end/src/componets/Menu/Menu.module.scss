@@ -53,9 +53,8 @@
 @media (max-width: 700px) {
   .mob__container {
     display: block;
-    .hidden {
-      display: none;
-    }
+    font-family: "Roboto";
+
     .mob__menu {
       width: 100%;
       text-align: left;
@@ -64,27 +63,125 @@
       position: relative;
 
       img {
-        padding: 2px 18px 0 8px;
+        padding: 2px 15px 0 6px;
       }
 
       span {
         display: inline-block;
         padding-top: 5px;
         font-size: 14px;
-        font-family: "Roboto";
         color: rgb(0, 0, 0);
         text-transform: uppercase;
         line-height: 1.2;
       }
-      .arrow{
+
+      .arrow {
         position: absolute;
-        right: 0;
+        right: 3px;
       }
     }
 
     .mob__list {
       display: none;
+      position: relative;
+
+      .list__menu {
+        position: absolute;
+        width: 100%;
+        background-color: white;
+
+        li {
+          padding: 5px 22px;
+          border-bottom: #dfdfdf solid 1px;
+        }
+      }
+    }
+
+    .mob__cal, .mob__brigade, .mob__stock {
+      font-size: 14px;
+      color: rgb(0, 0, 0);
+      line-height: 1.2;
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      border-bottom: #dfdfdf solid 1px;
+
+      img {
+        padding: 4px 18px 0 8px;
+      }
+
+      span {
+        display: inline-block;
+        padding-top: 5px;
+        line-height: 1.2;
+      }
+    }
+
+    .mob__stock {
+      img {
+        padding: 2px 15px 0 6px;
+      }
+    }
+
+    .mob__cal {
+      border-bottom: #dfdfdf solid 7px;
+    }
+
+    .mob__cabinet,.mob__info {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      color: rgb(0, 0, 0);
+      width: 100%;
+
+      div {
+        text-align: left;
+        padding: 15px;
+        border-bottom: #dfdfdf solid 1px;
+
+        img {
+          padding: 4px 18px 0 8px;
+        }
+
+        span {
+          display: inline-block;
+          padding-top: 5px;
+          line-height: 1.2;
+        }
+      }
+
+      .fav {
+        border-bottom: #dfdfdf solid 7px;
+
+        img {
+          padding: 4px 14px 0 5px;
+        }
+      }
+
+    }
+    .mob__info{
+      position: relative;
+      div{
+        img{
+          padding: 4px 12px 0 4px;
+        }
+      }
+      .arrow{
+        position: absolute;
+        right: 4px;
+      }
+      .info__partners{
+        text-align: left;
+        padding: 15px;
+        border-bottom: #dfdfdf solid 1px;
+
+        img {
+          padding: 4px 9px 0 3px;
+        }
+
+      }
     }
 
   }
+
 }
