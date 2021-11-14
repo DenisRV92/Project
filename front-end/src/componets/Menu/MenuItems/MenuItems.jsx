@@ -1,19 +1,26 @@
 import React from 'react';
 import style from './MenuItems.module.scss'
+import PresentMenu from "./PresentMenu/PresentMenu";
 
 const MenuItems = (props) => {
-// console.log(props)
-    if (props.v) {
-        return (
 
-            <div onMouseLeave={() => props.setState(false)} className={style.items}>
-                <div className={style.container}>
-                    {props.v}
+    if (props.v) {
+        if (props.v !== 'КРОВЛЯ') {
+            return (
+
+                <div onMouseLeave={() => props.setState(false)} className={style.items}>
+                    <div className={style.container}>
+                        {props.v}
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
+        else {
+         return   <PresentMenu/>
+        }
     }
-    else {
+else
+    {
         return null
     }
 };

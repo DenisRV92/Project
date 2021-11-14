@@ -6,6 +6,7 @@
   .container {
     margin: 0 auto;
     width: 955px;
+    height: 60px;
   }
 
   .menu__list {
@@ -16,7 +17,7 @@
     color: rgb(243, 243, 243);
     //text-transform: uppercase;
     align-items: center;
-    //padding: 15px;
+    height: 100%;
     line-height: 1.2;
 
     li {
@@ -24,6 +25,7 @@
       height: 100%;
       display: flex;
       padding: 15px;
+      align-items: center;
 
       img {
         padding-right: 5px;
@@ -42,9 +44,12 @@
   .menu {
     margin-top: 0;
   }
+
 }
 
+
 //mobile
+
 .mob__container {
   display: none;
   background-color: white;
@@ -127,7 +132,7 @@
       border-bottom: #dfdfdf solid 7px;
     }
 
-    .mob__cabinet,.mob__info {
+    .mob__cabinet, .mob__info {
       display: flex;
       flex-direction: column;
       font-size: 14px;
@@ -159,18 +164,22 @@
       }
 
     }
-    .mob__info{
+
+    .mob__info {
       position: relative;
-      div{
-        img{
+
+      div {
+        img {
           padding: 4px 12px 0 4px;
         }
       }
-      .arrow{
+
+      .arrow {
         position: absolute;
         right: 4px;
       }
-      .info__partners{
+
+      .info__partners {
         text-align: left;
         padding: 15px;
         border-bottom: #dfdfdf solid 1px;

@@ -23,12 +23,11 @@ const Nav = () => {
 
     const catalog = (e) => {
 
-        setState(false);
         let input = e.target.value
         setSubstr(input)
 
         if (input !== '') {
-            // debugger
+
             let url = 'http://project/back-end/index.php';
             let formData = new FormData();
             formData.append('input', input);
@@ -58,7 +57,7 @@ const Nav = () => {
     return (
         <Context.Provider value={[state, setState, context, substr]}>
             <>
-                <div className={style.container}>
+                <div onFocus={()=>setState(false)} className={style.container}>
                     <div className={style.nav}>
                         <div className={style.left}>
                             <div className={style.left__contact}>

@@ -12,11 +12,11 @@ import brigade from '../../image/mob_menu/brigade.png'
 import cal from '../../image/mob_menu/cal.png'
 import user from '../../image/nav/user.png'
 import stat from '../../image/mob_menu/stat.png'
-import fav from  '../../image/mob_menu/fav_icon.png'
-import info from  '../../image/header/company.png'
-import price from  '../../image/header/dollar.png'
-import car from  '../../image/mob_menu/car.png'
-import arms from  '../../image/header/arms.png'
+import fav from '../../image/mob_menu/fav_icon.png'
+import info from '../../image/header/company.png'
+import price from '../../image/header/dollar.png'
+import car from '../../image/mob_menu/car.png'
+import arms from '../../image/header/arms.png'
 
 const Menu = () => {
     const [state, setState, context, substr] = useContext(Context);
@@ -24,12 +24,26 @@ const Menu = () => {
     const arrayList = [`РАСЧЕТ ОНЛАЙН`, 'КРОВЛЯ', 'ФАСАД', 'ЗАБОР',
         'ОКНА МАНСАРДНЫЕ', 'ЧЕРДАЧНЫЕ ЛЕСТНИЦЫ',
         'ВНУТРЕНЯЯ ОТДЕЛКА', 'ИНСТРУМЕНТ', 'АКЦИИ', 'МОНТАЖНЫЕ БРИГАДЫ']
-    // const [state, setState] = useState(false);
+
     const [text, setText] = useState('');
 
     function click(event) {
+
+        setState(true);
+        setText(event.target.innerHTML);
+        event.target.style.backgroundColor = 'white';
+
+    }
+
+    function focus(event) {
         setState(true)
-        setText(event.target.innerHTML)
+        event.target.style.backgroundColor = 'white';
+        event.target.style.color = '#565b61'
+    }
+
+    function mouseLeave(event) {
+        setState(false)
+        event.target.style.backgroundColor = '#565b61';
     }
 
     const ItemList = (props) => {
@@ -48,7 +62,7 @@ const Menu = () => {
         } else {
             return (
                 <>
-                    <li onClick={click}>{props.v}</li>
+                    <li onMouseEnter={mouseLeave}  onMouseOver={focus} onClick={click}>{props.v}</li>
                 </>
             );
         }
@@ -149,7 +163,7 @@ const Menu = () => {
                 <MenuItems v={text} setState={setState}/>
                 : <CatalogList context={context} substr={substr}/>
             }
-            {/*<MenuItems v={text}/>*/}
+
         </>
     );
 }

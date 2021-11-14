@@ -3,7 +3,7 @@ import style from './CatalogList.module.scss'
 import CatalogItem from "./CatalogItems/CatalogItem";
 
 const CatalogList = (props) => {
-
+// console.log(props)
     if (props.context.length !== 0) {
         const Catalog = props.context.map(v =>
             <CatalogItem name={v['Наименования']}

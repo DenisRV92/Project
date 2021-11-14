@@ -1,0 +1,26 @@
+.present {
+  width: 955px;
+  display: flex;
+  font-family: "Roboto";
+
+  .block__one {
+    .title {
+
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: left;
+
+    }
+
+    .one__item {
+      display: flex;
+    }
+  }
+
+  .block__two {
+    display: flex;
+  }
+}
