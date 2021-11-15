@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './PresentMenu.module.scss'
 
-const PresentMenu = () => {
+const PresentMenu = (props) => {
     return (
-        <div className={style.present}>
+        <div onMouseLeave={()=>props.setState(false)} className={style.present}>
             <div className={style.block__one}>
 
-                <span className={style.title}>Кровельные материалы</span>
+                <span className={style.title}>Кровельные <br/> материалы</span>
 
                 <div className={style.one__item}>
                     <div className={style.item__page}>
@@ -41,8 +41,8 @@ const PresentMenu = () => {
                 </div>
             </div>
             <div className={style.block__two}>
-                <div className="two__page">
-                    <span>Комплектующие для кровли</span>
+                <div className={style.two__page}>
+                    <span>Комплектующие <br/>для кровли</span>
                     <ul>
                         <li>Доборные элементы</li>
                         <li>Система вентиляции</li>
@@ -53,8 +53,8 @@ const PresentMenu = () => {
                         <li>Флюгеры</li>
                     </ul>
                 </div>
-                <div className="two__page">
-                    <span>Изоляционные материалы </span>
+                <div className={style.two__page}>
+                    <span>Изоляционные<br/> материалы </span>
                     <ul>
                         <li>Пленки</li>
                         <li>Система вентялиции</li>
@@ -62,7 +62,7 @@ const PresentMenu = () => {
                 </div>
             </div>
             <div className={style.block__three}>
-                <span>Водосточные системы</span>
+                <span>Водосточные <br/>системы</span>
                 <ul>
                     <li>Водостоки из пластика</li>
                     <li>Водостоки из металла</li>

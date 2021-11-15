@@ -28,23 +28,21 @@ const Menu = () => {
     const [text, setText] = useState('');
 
     function click(event) {
-
-        setState(true);
-        setText(event.target.innerHTML);
-        event.target.style.backgroundColor = 'white';
-
-    }
-
-    function focus(event) {
         setState(true)
         event.target.style.backgroundColor = 'white';
         event.target.style.color = '#565b61'
+
+    }
+    //
+    function focus(event) {
+
+        event.target.style.backgroundColor = 'white';
+        event.target.style.color = '#565b61'
+        // setState(true)
+        setText(event.target.innerHTML);
+
     }
 
-    function mouseLeave(event) {
-        setState(false)
-        event.target.style.backgroundColor = '#565b61';
-    }
 
     const ItemList = (props) => {
         if (props.v === 'РАСЧЕТ ОНЛАЙН') {
@@ -62,7 +60,7 @@ const Menu = () => {
         } else {
             return (
                 <>
-                    <li onMouseEnter={mouseLeave}  onMouseOver={focus} onClick={click}>{props.v}</li>
+                    <li id='li' onMouseOver={focus} onClick={click}>{props.v}</li>
                 </>
             );
         }
@@ -88,7 +86,7 @@ const Menu = () => {
         <>
             <div className={style.menu}>
                 <div className={style.container}>
-                    <ul className={style.menu__list}>
+                    <ul  className={style.menu__list}>
                         {List}
                     </ul>
 

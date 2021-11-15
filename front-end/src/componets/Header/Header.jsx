@@ -20,9 +20,7 @@ const Header = () => {
                 </ul>
                 <select className={style.header__region}>
                     <option>Брянск и область</option>
-                    {/*<option>Пункт 2</option>*/}
-
-                </select>
+                               </select>
             </div>
             <div className={style.mob__container}>
                 <div className={style.block__one}>

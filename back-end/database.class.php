@@ -42,11 +42,11 @@ class database
     {
 
         $current = file_get_contents('log.txt');
-//
+
         preg_match_all('/поисковый запрос-(.*?);/', $current, $name);
         preg_match_all('/кол-во  найденных товаров-(.*?);/', $current, $count);
         preg_match_all('/дата выполнения запроса-(.*?);/', $current, $data);
-//
+
         array_map(function ($i, $v) {
             $sql = "INSERT INTO  логи (`id`,`поисковой запрос`)  VALUES ('$i','$v')";
             $query = $this->pdo->prepare($sql);

@@ -16,7 +16,7 @@ const MenuItems = (props) => {
             );
         }
         else {
-         return   <PresentMenu/>
+         return   <PresentMenu setState={props.setState}/>
         }
     }
 else

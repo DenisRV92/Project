@@ -9,7 +9,7 @@ import icon2 from '../../image/nav/icon2.png'
 import user from '../../image/nav/user.png'
 import city from '../../image/mob_nav/city.png'
 import pin from '../../image/mob_nav/pin.png'
-import arrow from  '../../image/mob_nav/arrow.png'
+import arrow from '../../image/mob_nav/arrow.png'
 import Menu from "../Menu/Menu";
 
 
@@ -22,7 +22,7 @@ const Nav = () => {
     const [substr, setSubstr] = useState('');
 
     const catalog = (e) => {
-
+        setState(false)
         let input = e.target.value
         setSubstr(input)
 
@@ -57,7 +57,7 @@ const Nav = () => {
     return (
         <Context.Provider value={[state, setState, context, substr]}>
             <>
-                <div onFocus={()=>setState(false)} className={style.container}>
+                <div className={style.container}>
                     <div className={style.nav}>
                         <div className={style.left}>
                             <div className={style.left__contact}>
@@ -71,7 +71,7 @@ const Nav = () => {
                                     <p>Заказать обратный звонок</p>
                                 </div>
                             </div>
-                            <div className={style.left__catalog} id='form'>
+                            <div className={style.left__catalog}>
                                 <input onChange={catalog} type="text" value={substr}
                                        placeholder='Поиск по каталогу'/>
                                 <img src={search} alt=""/>
@@ -99,8 +99,8 @@ const Nav = () => {
                     <div className={style.block__one}>
                         <img src={city} alt=""/>
                         <span>Город: </span><select>
-                            <option>Брянск и область</option>
-                        </select>
+                        <option>Брянск и область</option>
+                    </select>
                         <img className={style.arrow} src={arrow} alt=""/>
                     </div>
                     <div className={style.block__two}>

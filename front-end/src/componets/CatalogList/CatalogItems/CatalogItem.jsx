@@ -5,7 +5,7 @@ import Highlighter from "react-highlight-words";
 const CatalogItem = (props) => {
 
     return (
-        // <div className={style.catalog}>
+
 
             <div className={style.catalog}>
 

@@ -1,5 +1,5 @@
 
-.catalog{
+.catalog {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -10,13 +10,16 @@
   font-family: "Roboto";
   color: black;
   line-height: 1.2;
-  .catalog__name{
+
+  .catalog__name {
     font-size: 22px;
   }
-  .catalog__img{
+
+  .catalog__img {
     width: 220px;
     height: 200px;
-    img{
+
+    img {
       width: 220px;
       height: 200px;
     }

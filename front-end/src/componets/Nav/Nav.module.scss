@@ -35,7 +35,7 @@
             color: rgb(1, 89, 201);
             text-decoration: underline;
             line-height: 1.2;
-
+            cursor: pointer;
 
           }
         }
@@ -56,6 +56,7 @@
             font-family: "Roboto";
             color: rgb(120, 120, 120);
             line-height: 1.2;
+            cursor: pointer;
 
             strong {
               color: black;
@@ -69,6 +70,7 @@
             color: rgb(1, 89, 201);
             text-decoration: underline;
             text-align: right;
+            cursor: pointer;
           }
         }
       }
@@ -76,6 +78,10 @@
       .left__catalog {
         width: 100%;
         position: relative;
+
+        button {
+          float: right;
+        }
 
         input {
           width: 525px;
@@ -88,6 +94,7 @@
         input::placeholder {
           font-style: italic;
         }
+
 
         img {
           position: absolute;
@@ -128,6 +135,7 @@
         .cabinet__user {
           margin-top: 5px;
           padding-top: 2px;
+          cursor: pointer;
 
           img {
             padding-right: 3px;
@@ -136,6 +144,17 @@
       }
     }
   ;
+  }
+}
+
+@media (max-width: 980px) {
+  .container {
+    width: 100%;
+
+    .nav {
+      margin: 0 auto;
+      width: 100%;
+    }
   }
 }
 
@@ -155,7 +174,8 @@
 @media (max-width: 700px) {
   .mob__container {
     display: block;
-   .block__two, .block__one {
+
+    .block__two, .block__one {
       width: 100%;
       text-align: left;
       padding: 15px;
@@ -169,12 +189,14 @@
       select {
         appearance: none;
       }
-      .arrow{
+
+      .arrow {
         position: absolute;
         right: 0;
       }
     }
-    .block__two{
+
+    .block__two {
       border-bottom: #dfdfdf solid 7px;
     }
   }
